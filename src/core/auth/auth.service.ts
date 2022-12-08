@@ -18,12 +18,11 @@ export class AuthService {
       }
       // user service
     } while (false);
-    console.log(payload);
     return payload;
   }
 
   generateAccessToken(payload: UserPayload) {
-    const access_token = this.jwtService.signAsync(payload);
+    const access_token = this.jwtService.sign(payload);
     return {
       access_token,
     };

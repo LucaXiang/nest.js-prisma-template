@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from '@core/auth/auth.module';
 
 @Module({
-  imports: [PrismaModule, ConfigModule.forRoot(), AuthModule],
+  imports: [AuthModule, PrismaModule, ConfigModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })
