@@ -28,7 +28,11 @@
       "@interceptors/*": ["src/common/interceptors/*"],
       "@middlewares/*": ["src/common/middlewares/*"],
       "@pipes/*": ["src/common/pipes/*"],
-      "@strategies/*": ["src/common/strategies/*"]
-    }
+      "@strategies/*": ["src/common/strategies/*"],
+      "@types/*": ["src/types/*"]
+    },
+    "typeRoots": [
+      "src/types"
+    ]
   }
 }
