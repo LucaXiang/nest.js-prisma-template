@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class AppService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  find_all() {
+  findAll() {
     return this.prismaService.user.findMany();
   }
 
