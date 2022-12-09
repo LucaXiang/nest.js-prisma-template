@@ -1,8 +1,7 @@
 import * as Bcrypt from 'bcrypt';
 
 export function hash(plain_text: string): string {
-  const salt = Bcrypt.genSaltSync(parseInt(process.env.HASH_ROUNDS));
-  return Bcrypt.hashSync(plain_text, salt);
+  return Bcrypt.hashSync(plain_text, parseInt(process.env.HASH_ROUNDS));
 }
 
 export function compare(plain_text: string, hashed_text: string): boolean {
