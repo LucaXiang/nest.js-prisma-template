@@ -30,9 +30,6 @@
       "@pipes/*": ["src/common/pipes/*"],
       "@strategies/*": ["src/common/strategies/*"],
       "@types/*": ["src/types/*"]
-    },
-    "typeRoots": [
-      "src/types"
-    ]
+    }
   }
 }
