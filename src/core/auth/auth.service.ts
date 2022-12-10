@@ -31,7 +31,6 @@ export class AuthService {
         }
         break;
       }
-      // user service
     } while (false);
     return payload;
   }
