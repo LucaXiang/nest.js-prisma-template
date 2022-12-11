@@ -50,7 +50,7 @@ describe('AppController (e2e)', () => {
       .expect('Hello admin');
   });
 
-  beforeAll(async () => {
+  afterAll(async () => {
     await app.close();
   });
 });
