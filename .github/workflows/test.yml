@@ -1,0 +1,59 @@
+name: template test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: sample
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Create .env file
+        uses: ozaytsev86/create-env-file@v1
+        with:
+          ENV_APP_HOST: localhost
+          ENV_APP_PORT: 3000
+          ENV_JWT_SECRET: SECRET
+          ENV_HASH_SALT: SALT
+          ENV_ADMIN_PASSWORD: "i_am_admin"
+          ENV_DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/sample?schema=public"
+          ENV_REDIS_URL: "redis://localhost:6379"
+      - name: Install Yarn
+        run: npm install -g yarn
+      - run: yarn install
+      - name: Prisma
+        run: yarn prisma migrate dev
+      - run: yarn run test:e2e
