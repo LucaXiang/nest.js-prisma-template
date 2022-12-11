@@ -23,9 +23,5 @@
     "@Middlewares/(.*)": "<rootDir>../src/common/middlewares/$1",
     "@Pipes/(.*)":"<rootDir>../src/common/pipes/$1",
     "@Strategies/(.*)": "<rootDir>../src/common/strategies/$1"
-  },
-  "roots": [
-    "<rootDir>/../src",
-    "."
-  ]
+  }
 }
