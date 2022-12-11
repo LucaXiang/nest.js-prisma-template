@@ -657,6 +657,13 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@liaoliaots/nestjs-redis@^9.0.4":
+  version "9.0.4"
+  resolved "https://registry.yarnpkg.com/@liaoliaots/nestjs-redis/-/nestjs-redis-9.0.4.tgz#ce2dc4dfbb52f09c2962d6f593abe747e4d173c3"
+  integrity sha512-iVktrMEcnzCmi805CSNGcxMyQc02E2L2KTYPiSObIaJJ9Zq4Eqtc6dK8+tqDP7yL2A6qj6xgVagvZbXVsb7i2A==
+  dependencies:
+    tslib "2.4.1"
+
 "@mapbox/node-pre-gyp@^1.0.10":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.10.tgz#8e6735ccebbb1581e5a7e652244cadc8a844d03c"
