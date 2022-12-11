@@ -18,18 +18,18 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@prisma/*": ["src/prisma/*"],
-      "@core/*": ["src/core/*"],
-      "@utils/*": ["src/utils/*"],
-      "@config/*": ["src/common/config/*"],
-      "@decorators/*": ["src/common/decorators/*"],
-      "@filters/*": ["src/common/filters/*"],
-      "@guards/*": ["src/common/guards/*"],
-      "@interceptors/*": ["src/common/interceptors/*"],
-      "@middlewares/*": ["src/common/middlewares/*"],
-      "@pipes/*": ["src/common/pipes/*"],
-      "@strategies/*": ["src/common/strategies/*"],
-      "@types/*": ["src/types/*"]
+      "@Prisma/*": ["src/prisma/*"],
+      "@Core/*": ["src/core/*"],
+      "@Utils/*": ["src/utils/*"],
+      "@Config/*": ["src/common/config/*"],
+      "@Decorators/*": ["src/common/decorators/*"],
+      "@Filters/*": ["src/common/filters/*"],
+      "@Guards/*": ["src/common/guards/*"],
+      "@Interceptors/*": ["src/common/interceptors/*"],
+      "@Middlewares/*": ["src/common/middlewares/*"],
+      "@Pipes/*": ["src/common/pipes/*"],
+      "@Strategies/*": ["src/common/strategies/*"],
+      "@Types/*": ["src/types/*"]
     }
   }
 }

@@ -9,5 +9,12 @@
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
-  }
+  },
+  "moduleNameMapper": {
+    "@Prisma/(.*)": "<rootDir>../src/prisma/$1"
+  },
+  "roots": [
+    "<rootDir>/../src",
+    "."
+  ]
 }

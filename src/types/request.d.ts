@@ -1,4 +1,4 @@
-import { UserPayload } from '@core/auth/types/user.payload';
+import { UserPayload } from '@Core/auth/types/user.payload';
 
 declare global {
   namespace Express {
