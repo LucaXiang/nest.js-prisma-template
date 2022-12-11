@@ -11,7 +11,10 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('/login')
   login(@Req() req: Request) {
-    return this.authService.generateAccessToken(req.user);
+    const access_token = this.authService.generateAccessToken(req.user);
+    return {
+      access_token,
+    };
   }
 
   @UseGuards(JwtAuthGuard)
