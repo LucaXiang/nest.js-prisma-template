@@ -11,7 +11,18 @@
     "^.+\\.(t|j)s$": "ts-jest"
   },
   "moduleNameMapper": {
-    "@Prisma/(.*)": "<rootDir>../src/prisma/$1"
+    "@Prisma/(.*)": "<rootDir>../src/prisma/$1",
+    "@Utils/(.*)": "<rootDir>../src/utils/$1",
+    "@Types/(.*)":"<rootDir>../src/types/$1",
+    "@Core/(.*)": "<rootDir>../src/core/$1",
+    "@Config/(.*)":"<rootDir>../src/common/config/$1",
+    "@Decorators/(.*)": "<rootDir>../src/common/decorators/$1",
+    "@Filters/(.*)":"<rootDir>../src/common/filters/$1",
+    "@Guards/(.*)": "<rootDir>../src/common/guards/$1",
+    "@Interceptors/(.*)":"<rootDir>../src/common/interceptors/$1",
+    "@Middlewares/(.*)": "<rootDir>../src/common/middlewares/$1",
+    "@Pipes/(.*)":"<rootDir>../src/common/pipes/$1",
+    "@Strategies/(.*)": "<rootDir>../src/common/strategies/$1"
   },
   "roots": [
     "<rootDir>/../src",
