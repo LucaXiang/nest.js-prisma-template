@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  #Node Service
+  node:
+    container_name: app-node
+    image: app/node
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile
+    tty: true
+    working_dir: /usr/src/app
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - app-network
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    command: npm run start:dev
+    restart: unless-stopped
+    depends_on:
+      - redis
+      - postgres
+
+  #Posgres Service
+  postgres:
+    container_name: app-postgres
+    image: postgres
+    tty: true
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  #Redis Service
+  redis: # Name of container
+    container_name: app-redis
+    image: redis
+    tty: true
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    volumes:
+      - dbdata:/usr/data/redis/
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local

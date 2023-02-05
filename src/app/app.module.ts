@@ -5,7 +5,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from '@Core/auth/auth.module';
 import { RedisModule } from '@liaoliaots/nestjs-redis';
-
 @Module({
   imports: [
     AuthModule,
